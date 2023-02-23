@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .wrap1 > .box1 {
+            width: 100px;
+            height: 100px;
+            background-color: aliceblue;
+        }
+        .wrap1 > .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: cornflowerblue;
+        }
+    </style>
+    <div class="wrap1">
+        <div class="box1">block</div>
+        <span class="box2">inline</span>
+    </div>
+
+    <style>
+        .wrap2 {
+            width: 200px;
+            height: 100px;
+        }
+        .wrap2 > .box1 {
+            width: 100%;
+            height: 50%;
+            background-color: lightpink;
+        }
+        .wrap2 > .box2 {
+            width: 50%;
+            height: 50%;
+            background-color: lightblue;
+        }
+    </style>
+    <div class="wrap2">
+        <div class="box1">BOX1</div>
+        <div class="box2">BOX2</div>
+    </div>
+
+    <style>
+        .wrap3 > div {
+           width: 100px;
+           height: 100px; 
+        }
+        .wrap3 > .box1 {
+            border : 1px solid lightpink;
+        }
+        .wrap3 > .box2 {
+            border-left : 3px solid palevioletred;
+            border-right: 3px solid teal;
+        }
+    </style>
+    <div class="wrap3">
+        <div class="box1">BOX1</div>
+        <div class="box2">BOX2</div>
+    </div>
+
+
+    <style>
+        .wrap4 > div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+        }
+        .wrap4 > .box1 {
+            border-radius: 3px;
+            border-radius : 3px 6px;
+            border-radius: 3px 6px 3px;
+            border-radius: 3px 6px 3px 6px;
+        }
+    </style>
+    <div class="wrap4">
+        <div class="box1">BOX1</div>
+        <div class="box2">BOX2</div>
+    </div>
+
+    <style>
+        .wrap5 > div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+        }
+        .wrap5 > .box1 {
+            padding: 5px;
+            padding: 10px 10px 10px 10px;
+        }
+        .wrap5 > .box2 {
+            padding-left: 10px;
+            padding-top: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+        }
+    </style>
+    <div class="wrap5">
+        <div class="box1">BOX1</div>
+        <div class="box2">BOX2</div>
+    </div>
+
+    <hr>
+    <style>
+        .wrap6 > div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+        }
+        .wrap6 > .box1 {
+            margin: 10px;
+        }
+    </style>
+    <div class="wrap6">
+        <div class="box1">BOX1</div>
+        <div class="box2">BOX2</div>
+    </div>
+ 
+    <hr>
+    <style>
+        .wrap7 {
+            width: 300px;
+            height: 300px;
+        }
+        .wrap7 > .box1 {
+            box-sizing: content-box;
+            width: 100px;
+            height: 100px;
+            border: 5px solid gray;
+            padding: 10px;
+            /* 박스의 실제 크키 : 100px + 5px * 2 + 10px * 2 = 130 */
+        }
+        .wrap7 > .box2 {
+            box-sizing: border-box;
+            width: 100px;
+            height: 100px;
+            border: 5px solid gray;
+            padding: 10px;
+        }
+    </style>
+    <div class="wrap7">
+        <div class="box1">BOX1</div>
+        <div class="box2">BOX2</div>
+    </div>
+
+
+
+</body>
+</html>

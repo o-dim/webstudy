@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 자식 선택자 -->
+    <style>
+        ul > li {
+            color: orange;
+        }
+        ul > li > a {
+            color: orange;
+            text-decoration-line: none;
+        }
+    </style>
+    
+    <ul>
+        <!-- ul 태그의 자식인 li. -->
+        <li>
+            <a href="javascript:void(0)">spring</a>
+        </li>
+        <li>
+            <a href="javascript:void(0)">summer</a>
+        </li>
+        <li>
+            <a href="javascript:void(0)">fall</a>
+        </li>
+        <li>
+            <a href="javascript:void(0)">winter</a>
+        </li>
+    </ul>
+
+
+    <style>
+        dl strong {
+            color : maroon;
+        }
+    </style>
+
+    <dl>
+        <dt><strong>제품 이름</strong></dt>
+        <dd>왕뚜껑</dd>
+        <dt><strong>조리법</strong></dt>
+        <dd>뜨거운 물을 넣고 3분 조리</dd>
+    </dl>
+
+    <style>
+        .europe > h3 ~ p {
+            color : yellowgreen;
+        }
+    </style>
+
+    <!--europe의 자식 h3의 형제인 p p p -->
+    <div class="europe">
+        <h3>Europe</h3>
+        <p>France</p>
+        <p>Italy</p>
+        <p>Germany</p>
+    </div>
+    <!-- 인접자식 -->
+    <style>
+        /* asia div 의 자식인 h3에 인접한 자식 P(가장 가까운 애만 해당) */
+        .asia > h3 + p {
+            color: blue;
+        }
+    </style>
+    <div class="asia">
+        <h3>asia</h3>
+        <p>korea</p>
+        <p>thailand</p>
+        <p>china</p>
+    </div>
+
+    <style>
+        .lunch > h3 + ol > li:nth-of-type(3) {
+            color: maroon;
+        }
+    </style>
+    <div class="lunch">
+        <h3>choose your lunch</h3>
+        <ol>
+            <li>Hamberger</li>
+            <li>nurgets</li>
+            <li>dali</li>
+            <li>hotpot</li>
+        </ol>
+    </div>
+
+    <style>
+        /* id와 pw에만 적용하기 = 둘의 공통적 속성인 Placeholder이용하기 */
+        form > input[placeholder]{
+            color : gray;
+        }
+        form > input[type=submit]{
+            color : pink;
+        }
+    </style>
+    <form method="post">
+        <input type="text" placeholder="id"><br>
+        <input type="password" placeholder="password"><br>
+        <input type="submit" value="login"><br>
+    </form>
+
+    <!-- 마우스 반응 선택자 -->
+    <style>
+        .link{
+            color: gray;
+            text-decoration: none;
+        }
+        .link:hover{
+            text-decoration: underline;
+            color: burlywood;
+        }
+        .link:active {
+            color: crimson;
+        }
+    </style>
+    <a class="link" href="javascript:void(0)">링크</a>
+
+    <!-- 상태 선택자 -->
+    <style>
+        #name:focus{
+            color: green;
+        }
+        .register_form input[name=gender]:checked + label{
+            color:darkcyan;
+            font-weight: 900;
+        }
+    </style>
+    <form class="register_form">
+        <div>
+            <label for="name">name</label>
+            <input type="text" id="name">
+        </div>
+        <div>
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="male">남성</label>
+            <input type="radio" name="gender" id="female" value="female">
+            <label for="female">여성</label>
+        </div>
+    </form>
+
+
+</body>
+</html>
