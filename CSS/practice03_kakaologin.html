@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .content-article{
+        line-height: 1.5;
+        font-family: -apple-system,Roboto,NotoSans,AppleSDGothicNeo,Malgun Gothic,맑은 고딕,돋움,dotum,sans-serif;
+        color: #333;
+        width: 580px;
+        height: 100%;
+        margin: 40px auto 42px;
+        padding: 0 69px;
+        border: 1px solid rgba(0,0,0,.12);
+        font-size: 12px;
+        box-sizing: border-box;
+        }
+        .doc-title{
+            font-size: 18px;
+            text-align: center;
+            padding-bottom: 5%;
+            padding-top: 5%;
+        }
+        body {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+        }
+        .container-doc {
+            width: 100%;
+            height: 100%;
+        }
+        .content-article{
+            display: flex;
+        }
+        .inner-container {
+            height: 100px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .main-content {
+            width: 600px;
+            height: 500px;
+            border: 1px solid gray;
+            line-height: 600px;
+            position: relative;
+            box-sizing: border-box;
+        }
+        .tf_g{
+            width: 400px;
+            color: gray;
+            font-size: 18px;
+            line-height: 10%;
+            border: none;
+            border-bottom: 2px solid black;
+            position: absolute;
+            top: 10%;
+            left: 2%;
+        }
+        .invisible-content {
+            visibility: hidden;
+            height: 10px;
+        }
+        .pw-input{
+            width: 400px;
+            color: gray;
+            font-size: 18px;
+            line-height: 10%;
+            border: none;
+            border-bottom: 2px solid black;
+            position: absolute;
+            top: 25%;
+            left: 2%;
+        }
+        .login-btn {
+            position: absolute;
+            background-color: orange;
+            color: black;
+            width: 400px;
+            height: 20px;
+        }
+        .link_info {
+            color : black;
+            text-decoration-line: none;
+            text-align: center;
+        }
+        .doc-footer {
+            text-align: center;
+        }
+        .or {
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="containter-doc">
+
+        <div class="inner-container">
+
+            <main class="doc-main">
+                <div class="doc-title">
+                    <div class="doc-title">
+                        <h1>kakao</h1>
+                    </div>
+                    <article class="content-article">
+                        <div class="main-content">
+                            <div class="id">
+                                <div class="box_tf fst">
+                                    <input type="text" placeholder="카카오메일 아이디, 이메일, 전화번호 " class="tf_g" value=""><div class="util_tf">
+
+                                    </div></div>
+                            </div>
+                            <div class="invisible-content">
+                                TIP! 카카오 메일이 있다면 메일 아이디만 입력해보세요
+                            </div>
+                            <div class="password">
+                                <input type="password" class="pw-input" placeholder="비밀번호">
+                            </div>
+                            <div class="or">
+                                <span>
+                                    ----------또는----------
+                                </span>
+                               
+                            </div>
+                            <div class="qr-login">
+                                <p>로그인</p>
+                            </div>
+                        </div>
+                    </article>
+                    <footer class="doc-footer">
+                        <strong class="screen-out">서비스 이용정보</strong>
+                        <div class="service_info">
+                            <a href="javascript:void(0)" class="link_info">이용약관</a>
+                            <a href="javascript:void(0)" class="link_info"><strong>개인정보 처리방침</strong></a>
+                            <a href="javascript:void(0)" class="link_info">운영정책</a>
+                            <a href="javascript:void(0)" class="link_info">고객센터</a>
+                            <a href="javascript:void(0)" class="link_info">공지사항</a>
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
