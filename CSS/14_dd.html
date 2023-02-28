@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <style>
+        /* 1. float 속성 */
+        .wrap1 > div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+
+        }
+        .wrap1 > .box1 {
+            float: left;
+        }
+        .wrap1 > .box2 {
+            float: right;
+        }
+    </style>
+    
+
+    <div class="wrap1">
+        <div class="box1">BOX1</div>
+        <div class="box2">BOX2</div>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce a sem ut arcu dignissim faucibus eget quis felis. Aenean erat neque, ultrices a ex ac, tempor ullamcorper sem. Pellentesque sollicitudin ornare eros sed pharetra. Nunc sed risus vel ex facilisis molestie ut a justo. Aenean feugiat magna id ante congue, sed lacinia orci rutrum. Maecenas feugiat nisi eget odio pretium, quis egestas lectus iaculis. Ut ut justo nibh. Duis id vestibulum orci, eget faucibus purus. Maecenas ut massa blandit, accumsan augue tincidunt, vestibulum est. Donec ut ornare mi. Duis ut fermentum lacus. Praesent sit amet vulputate augue. Aenean id justo elit. Cras vestibulum, mauris vitae mollis vulputate, magna leo iaculis sem, quis congue ante eros in nibh. Phasellus et quam eros. Vivamus et libero justo.
+    </div>
+
+    <hr>
+
+    <style>
+        .wrap2 > div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+            display: inline-block;
+        }
+
+        .wrap2 > .box1 {
+            overflow: hidden;
+        }
+        .wrap2 > .box2 {
+            overflow-x: scroll;
+            overflow-y: scroll;
+        }
+        .wrap2 > .box3 { 
+            overflow: scroll;
+        }
+    </style>
+    <div class="wrap2">
+        <div class="box1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. usce a sem ut arcu dignissim faucibus eget quis felis.</div>
+        <div class="box2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. usce a sem ut arcu dignissim faucibus eget quis felis.</div>
+        <div class="box3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. usce a sem ut arcu dignissim faucibus eget quis felis.</div>
+    </div>
+
+    <hr>
+    
+    <style>
+        .wrap3 {
+            overflow: hidden;
+        }
+        .wrap3 > div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+            float: left;
+        }
+    </style>
+    <div class="wrap3">
+        <div>BOX1</div>
+        <div>BOX2</div>
+    </div>
+
+    <hr>
+
+    <style>
+
+        div {
+            box-sizing: border-box;
+        }
+        .wrap4 {
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: row-reverse;
+            width: 600px;
+            height: 100px;
+            justify-content: center;
+        }
+        .wrap4 > div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+        }
+
+    </style>
+    <div class="wrap4">
+        <div>BOX1</div>
+        <div>BOX2</div>
+        <div>BOX3</div>
+        <div>BOX4</div>
+        <div>BOX5</div>
+    </div>
+
+
+</body>
+</html>

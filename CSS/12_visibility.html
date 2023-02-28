@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .wrap1 > img:nth-of-type(2){
+            visibility: hidden;
+        }
+    </style>
+    <div class="wrap1">
+        <img src="../../images/flower1.jpg" alt="" width="200px">
+        <img src="../../images/flower2.jpg" alt="" width="200px">
+        <img src="../../images/flower3.jpg" alt="" width="200px">
+    </div>
+<hr>
+    <style>
+        .wrap2 > div {
+            width: 200px;
+        }
+        .wrap2 > div > img {
+            width: 100%;
+        }
+        .wrap2 > div:hover > img {
+            visibility: hidden;
+        }
+        
+    </style>
+    <div class="wrap2">
+        <div><img src="../../images/flower1.jpg" alt=""></div>
+        <div><img src="../../images/flower2.jpg" alt=""></div>
+        <div><img src="../../images/flower3.jpg" alt=""></div>
+    </div>
+    <hr>
+    <style>
+        .wrap3 > .title {
+            font-size: 48px;
+        }
+        .wrap3 > .answer {
+            background-color: gray;
+            padding: 5px;
+            border: 1px solid black;        
+        }
+        .wrap3 > .right_answer {
+            visibility: hidden;
+        }
+        .wrap3 > .answer:hover + .right_answer {
+            visibility: visible;
+        }
+        
+    </style>
+    <div class="wrap3">
+        <div class="title">다음 중 블록레벨이 아닌 태그는 무엇인가요?</div>
+        <div class="question">
+            <ol>
+                <li>&lt;div&gt;</li>
+                <li>&ltul&gt;</li>
+                <li>&lta&gt;</li>
+                <li>&ltp&gt;</li>
+                <li>&ltta&gt;</li>
+            </ol>
+        </div>
+        <span class="answer">정답보기</span><span class="right_answer">&nbsp;&nbsp;&nbsp;&nbsp;3</span>
+    </div>
+    <hr>
+    
+</body>
+</html>

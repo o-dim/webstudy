@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <style>
+        .wrap1 > div {
+            border: 1px solid gray;
+            width: 300px;
+            height: 100px;
+            position: relative;
+            top: 50px;
+            left: 300px;
+        }
+    </style>
+
+    <div class="wrap1">
+        <div>realtive Box</div>
+    </div>
+
+    <style>
+        .wrap3 {
+            margin-top: 100px;
+            width: 300px;
+            height: 300px;
+            border: 1px solid green;
+            position: relative;
+        }
+        .wrap3 > div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+    <div class="wrap3">
+        <div>absolute Box</div>
+    </div>
+
+    <style>
+        .wrap4 {
+            margin-top: 50px;
+            width: 300px;
+            height: 50px;
+            border: 1px solid gray;
+            position: relative;
+        }
+        .wrap4 > .btn_box {
+            width: 80px;
+            height: 40px;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            display: flex;
+        }
+        .wrap4 > .btn_box > div {
+            width: 50%;
+            height: 100%;
+            border: 1px solid gray;
+            
+       }
+       .wrap4 > .btn_box > div + div {
+        border-left: 0;
+       }
+    </style>
+    <div class="wrap4">
+        <div>증시</div>
+        <div class="btn_box">
+            <div>&lt;</div>
+            <div>&gt;</div>
+        </div>
+    </div>
+
+    <style>
+        .wrap5 {
+            width: 100%;
+            height: 100px;
+            background-color: aliceblue;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+    </style>
+
+    <div class="wrap5">
+        <div>fixed Box</div>
+    </div>
+
+    <br>
+
+    <style>
+        .wrap6 {
+            width: 300px;
+            height: 300px;
+            border: 1px solid gray;
+            display: flex;
+            position: relative;
+        }
+        .wrap6 > div {
+            width: 100px;
+            height: 100px;
+            border: 1px solid gray;
+            position: absolute;
+        }
+        .wrap6 > .spring {
+            top: 5%;
+            left: 5%;
+        }
+        .wrap6 > .summer {
+            top: 5%;
+            right: 5%;
+        }
+        .wrap6 > .fall{
+            bottom: 5%;
+            right : 5%;
+        }
+        .wrap6 > .winter {
+            bottom: 5%;
+            left: 5%;
+        }
+    </style>
+    <div class="wrap6">
+        <div class="spring">봄</div>
+        <div class="summer">여름</div>
+        <div class="fall">가을</div>
+        <div class="winter">겨울</div>
+    </div>
+
+    <hr>
+
+    <style>
+        /* .here은 부모가 됨 */
+        .here {
+            color: crimson;
+            font-weight: 900;
+            position: relative;
+            cursor: help;
+        }
+        /* ::before 혹은 ::after은 자식이 된다 */
+        .here:hover::after {
+            content: attr(data-describe);
+            position: absolute;
+            top: 20px;
+            left: 50px;
+            width: 100px;
+            height: 20px;
+            background-color: lightgoldenrodyellow;
+            border: 1px solid green;
+            border-radius: 2px;
+        }
+    </style>
+    <p>
+        <span class="here" data-describe="풍선도움말">여기</span>를 선택하세요
+    </p>
+</body>
+</html>
