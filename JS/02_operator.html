@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = 3;
+        var b = 10;
+        console.log(b ** a);
+        console.log(a / b, a % b, parseInt(a / b), Math.floor(a/b));
+
+        var c = 1;
+        var d = '1';
+        console.log(c == d, c != d)
+        console.log(c === d, c !== d);
+
+        console.log(1 + '1'); // '11'
+        console.log('1' + '1');
+        console.log(5 - '2');
+        console.log(5 * '2');
+        console.log(5 / ' 2');
+    </script>
+    <script>
+        /*
+         최저시급은 9,620원이다
+         8시간까지는 최저를 받고, 8시간 초과 근무는 1.5배를 받는다
+         10시간 근무했을때의 일당은?
+        */
+       var workTime = 10;
+       var payPerHour = 9620;
+       var regularPay = payPerHour * workTime;
+       var extraPay = (workTime <= 8) ? 0 : payPerHour * 0.5 * (workTime - 8);
+       alert(regularPay + extraPay);
+    </script>
+</body>
+</html>
