@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //함수 정의
+        function func1 () {
+            console.log('HelloWorld');
+        }
+        //함수 호출
+        func1();
+    </script>
+
+    <script>
+        // 일반 익명 함수를 변수에 저장하기
+        var fun2 = function () {
+            console.log('hEllOwoRld');
+        }
+        //변수를 함수명처럼 사용해서 호출하기
+        fun2();
+        // 화살표 함수를 변수에 저장하기
+        var fun3 = () => {
+            console.log('WoW....');
+        }
+        // 변수를 함수명처럼 사용해서 호출하기
+        fun3();
+
+    </script>
+    <script>
+        // 자기 호출 함수
+        (function(){
+            console.log('HelloWorld');
+        })();
+        (()=>{
+            console.log('NohelloWorld');
+        })();
+    </script>
+
+    <script>
+        function func4(data){
+            // 디폴트 매개변수 처리하기(인수가 전달되지 않았을 때 사용할 값을 정해두는 것)
+            if(data == undefined){ // undefined는 false 값임
+                data = '없음';
+            }
+            console.log(data);
+        }
+        
+        // 변수 선언
+        var name = '준수';
+        var age = '30';
+
+        // 함수 호출할 때 인수 전달하기
+        func4(name);
+        func4(age);
+    
+
+        // 인수와 매개변수의 개수가 서로 다른 경우
+        func4();
+        // 인수가 없기 때문에 매개변수는 undefined 상태가 된다
+
+
+        // 전개 연산자 확인해보기
+        function func5(...args){ // 매개변수 args는 배열임
+            for(let i in args){
+                console.log(i, args[i]);
+            }
+        }
+        // 함수 호출 (인수 개수를 다르게 지정)
+        func5();
+        func5('정수');
+        func5('RN', 'RM');
+        func5('wine', 'cheese', 'hamong');
+
+
+        // 함수정의 arguments 객체 확인
+        function func6(){
+            for(let i = 0 ; i < arguments.length; i++){
+                console.log(i, arguments[i]);
+            }
+        }
+        // 함수 호출 (매개변수가 없는 함수에 인수 전달하기)
+        func6('은정');
+        func6('미희', '지연');
+    </script>
+    <script>
+        function func7(n){
+            if(n == 0){
+                return; // 0이 전달되면 함수를 종료한다
+            } return n + 1; // 0이 아닌 값이 전달되면 1 더해서 반환한다
+        }
+        console.log(func7(10));
+        console.log(func7(0));
+    </script>
+    <script>
+        // 콜백함수
+        // 선언적 함수의 콜백
+        function info(data1, data2){
+            console.log(data1, data2);
+        }
+        function func8(data1, data2, func){
+            func(data1, data2);
+        }
+        func8('집에', '가고싶다....', info);
+
+        // 익명 함수의 콜백
+        function func9(data1, data2, func){
+            func(data1, data2);
+        }
+        func9('간절히', '가고싶다.....', function(data1, data2){
+            console.log(data1, data2);
+        })
+    </script>
+</body>
+</html>

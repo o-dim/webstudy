@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        var arr =[100, 1.5, 'candy', true];
+
+        for(var i = 0; i < arr.length; i++){
+            console.log(i, arr[i]);
+        }
+        for(let i in arr){
+            console.log(i, arr[i]);
+        }
+    </script>
+    <script>
+        // 빈 배열
+        var menu = [];
+        menu.push('제육볶음');
+        menu.push('계란찜');
+        menu.unshift('된장찌개');
+        menu.unshift('김치찌개');
+        
+
+        menu.pop();
+        menu.shift();
+        //인덱스 2에 계란찜 추가하기
+        menu.splice(2, 0, '계란찜')
+        //인덱스 0의 요소 삭제하기
+        menu.splice(0, 1);
+
+        // 인덱스 0부터 2개 요소를 '돈까스', '냉모밀'로 바꾸기
+        menu.splice(0, 2, '돈까스', '냉모밀');
+        console.log(menu);
+    </script>
+
+    <div id="box1">
+        <img src="" alt="">
+        logo_coupang.png, logo_daum.png, logo_google.png, logo_naver.png
+        <img src=""  width="100px">
+    </div>
+    <script>
+        var web = ['coupang', 'daum', 'google', 'naver'];
+        var str = ''
+        for(var i in web){
+            str += '<img src="../../images/logo_' + web[i] + '.png" width="100px">';
+        }
+        document.getElementById('box1').innerHTML = str;
+    </script>
+    
+    <div id="box2"></div>
+    <script>
+        var menu = ['메일', '카페', '블로그', '지식in', '쇼핑'];
+        var str ='<ul>';
+        for(var i in menu){
+            str += '<li>' + menu[i] + '</li>';
+        }
+        str += '</ul>'
+        document.getElementById('box2').innerHTML = str;
+    </script>
+
+
+    
+</body>
+</html>
