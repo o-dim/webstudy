@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var person = {
+            'name' : 'Lina',
+            'age' : 29
+        }
+        // 객체 -> JSON(문자열) 변환하기
+        var strJSON = JSON.stringify(person);
+        console.log(strJSON, typeof strJSON);
+
+        var obj = JSON.parse(strJSON);
+        console.log(obj, typeof obj);
+    </script>
+</body>
+</html>
