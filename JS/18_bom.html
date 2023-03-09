@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('화면 너비', screen.width);
+        console.log('화면 높이', screen.height);
+        console.log('실제 너비', screen.availWidth);
+        console.log('실제 높이', screen.availHeight);
+    </script>
+
+    <div>
+        <input type="button" onclick="history.back()" value="뒤로">
+        <input type="button" onclick="history.forward()" value="앞으로">
+        <input type="button" onclick="history.go(-1)" value="뒤로 1번">
+        <input type="button" onclick="history.go(-2)" value="뒤로 2번">
+    </div>
+
+    <div>
+        <input type="button" onclick="location.href='https://naver.com'" value="네이버">
+        <input type="button" onclick="location.href='https://google.co.kr'" value="구글">
+    </div>
+    <div>
+        <input type="button" id="btn_open" value="창열기">
+    </div>
+    <script>
+        document.getElementById('btn_open').addEventListener('click', () => {
+
+        })
+        
+    </script>
+</body>
+</html>

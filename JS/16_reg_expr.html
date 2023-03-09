@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>핸드폰 검사하기</h1>
+        <input type="text" name="" id="phone">
+        <input type="button" value="검사하기" id="btn_phone">
+    </div>
+
+    <script>
+        // 이벤트 타입 : click
+        // 이벤트 대상 : button
+        // 이벤트 리스너 : function(){} 또는 () => {}
+        
+
+        // 핸드폰 입력란
+        var phone = document.getElementById('phone');
+
+        // 검사버튼
+        var btnPhone = document.getElementById('btn_phone');
+
+        // 고전 이벤트 등록
+        btnPhone.onclick = function(){
+            // 핸드폰 번호 : 010 - 숫자 4개 - 숫자 4개
+            var regPhone = /^010-[0-9]{4}-[0-9]{4}$/
+            // var regPhone = /^01[0169]{3,4}-[0-9]{4}$/
+
+            // 정규식 검사
+            if(regPhone.test(phone.value)){
+                alert('핸드폰 번호가 맞습니다');
+            } else {
+                alert('핸드폰 번호가 아닙니다');
+            }
+        }
+
+    </script>
+
+    <div>
+        <h1>아이디 검사하기</h1>
+        <input type="text" id="id">
+        <input type="button" value="검사" id="btn_id">
+    </div>
+
+    <script>
+        var id = document.getElementById('id');
+        var btnId = document.getElementById('btn_id');
+
+        btnId.addEventListener('click', ()=>{
+            // 아이디 전체 5 ~ 20 자리, 소문자와 숫자와 밑줄
+            var regId = /^[a-z-_][a-z0-9_-]{4,19}$/;
+
+            if(regId.test(id.value)){
+                alert('아이디가 맞습니다');
+            } else {
+                alert('아이디 형식이 아닙니다');
+            }
+        });
+        
+    </script>
+
+    <div>
+        <h1>비밀번호 검사하기</h1>
+        <input type="password" id="pw">
+        <input type="button" value="검사" id="btn_pw">
+        <span id="msg_pw"></span>
+    </div>
+    <script>
+        var pw = document.getElementById('pw');
+        var msgPw = document.getElementById('msg_pw');
+        
+        // 비밀번호를 입력할 때마다 곧바로 정규식 검사
+        pw.addEventListener('keyup', () => {
+            // 비밀번호
+            // 전체 5 ~ 20 자
+            // 대문자, 소문자, 숫자, 특수문자(!@#$%^&*)
+            // 대문자, 소문자, 숫자, 특수문자 모두 반드시 포함!
+            // 테스트 하면 true 뜨니까 고거마다 +1 하게 해서 총 +4 나오게 만들면 될듯
+            var pwLength = pw.value.length;
+            var validCount = /[A-Z]/.test(pw.value) // has UpperClass?
+                            + /[a-z]/.test(pw.value) // has lowerClass?
+                            + /[0-9]/.test(pw.value)  // has Number?
+                            + /[!@#$%^&*]/.test(pw.value); // has Special?
+            // ValicCount에 이미 조건 다 들어갔으니까, 굳이 조건식 pw를 따로 만들필요는 없음
+
+            if(pwLength >= 50 && pwLength <= 20 && validCount == 4){
+                msgPw.textContent = '사용가능한 비밀번호입니다';
+            } else {
+                msgPw.textContent = '대문자, 소문자, 숫자, 특수문자 모두 반드시 포함한 5~20자의 비밀번호를 만드세요';
+            }
+
+        })
+    </script>
+
+
+    <div>
+        <h1>이메일 검사</h1>
+        <input type="text" id="email">
+        <span id="msg_email"></span>
+    </div>
+
+    <script>
+        // 이메일 입력란
+        var email = document.getElementById('email');
+        // 이메일 메세지
+        var msgEmail = document.getElementById('msg_email');
+
+        // 이메일 입력이 끝나면 정규식 검사를 함
+        // blur : 포커스를 잃었을 때 동작하는 이벤트로 가져오면 될 듯!
+        email.addEventListener('blur', () => {
+            // 한 글자 이상으로 ! : a+ 하면 될듯
+            var regEmail = /^[a-z0-9_-]+@+[a-z0-9A-Z]{2,}(\.[A-Za-z]{2,6}){1,2}$/
+
+            if(regEmail.test(email.value)){
+                msgEmail.textContent = '이메일 형식이 올바릅니다';
+            } else {
+                msgEmail.textContent = '이메일 형식이 잘못되었습니다';
+            }
+        })
+    </script>
+</body>
+</html>

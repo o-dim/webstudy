@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- btn을 이용한 서브밋 -->
+    <div>
+        <form id="frm_daum" action="https://search.daum.net/search" method="get" > <!-- 데이터를 보낼 서버 경로 -->
+            <input id="q" type="text" name="q">
+            <button type="submit">다음검색</button>
+        </form>
+    </div>
+    <script>
+        // submit 이벤트 등록
+        // 문서객체.onsubmit = function(){}
+        // 문서객체.addEventListner('submit', function(){})
+        var frmDaum = document.getElementById('frm_daum');
+
+        // 검색어 입력란
+        var q = document.getElementById('q');
+        // 이벤트 등록 (고전 이벤트)
+        frmDaum.onsubmit = function(event){
+            if(q.value == ""){
+                alert("검색어를 입력하세요");
+                // 검색어 입력란에 자동으로 커서 보내기
+                q.focus();
+                // submit 방지하는 코드
+                event.preventDefault();
+                // 이벤트 종료 (이벤트 리스너의 종료)
+                return;
+            }
+        }
+    </script>
+
+    <!-- <input type="submit"> 을 이용한 submit -->
+    <div>
+        <form id="frmGoogle action="https://www.google.co.kr/search" method="get">
+            <input type="text" name="gq"> <!-- name은 서버에서 인식하는 거-->
+            <input type="submit" value="구글검색">
+        </form>
+    </div>
+    <script>
+        var frmGoogle = document.getElementById('frmGoogle');
+
+        var gq = document.getElementById('gq');
+
+        frmGoogle.onsubmit = function(event){
+            if(gq.value == ""){
+                event.preventDefault();
+                return;
+            }
+        }
+    </script>
+    <div>
+        <form id="frm_naver" action="https://search.naver.com/search.naver" method="get">
+            <input id="query" type="text" name="query">
+            <input type="button" value="네이버검색" id="btn_naver">
+        </form>
+    </div>
+
+    <script>
+        // 검색어 입력란
+        var query = document.getElementById('query');
+        // 검색 폼
+        var frmNaver = document.getElementById('frm_naver');
+        // 검색 버튼
+        var btnNaver = document.getElementById('btn_naver');
+        // click 이벤트 등록
+        btnNaver.onclick = function(){
+            if(query.value == ''){
+                event.preventDefault();
+                return;
+            }
+            frmNaver.submit();
+        }
+    </script>
+
+
+    <!-- 체크박스 선택하기 -->
+    <style>
+        label {
+            display: block;
+        }
+    </style>
+    <div>
+        <label for="chk_all">
+            <input type="checkbox" id="chk_all">
+            모두 동의합니다
+        </label>    
+        <label for="chk_service">
+            <input type="checkbox" id="chk_service" class="chk_one">
+            이용약관에 동의합니다
+        </label>
+        <label for="chk_privacy">
+            <input type="checkbox" id="chk_privacy" class="chk_one">
+            개인정보 제공에 동의합니다
+        </label>
+        <label for="chk_promotion">
+            <input type="checkbox" id="chk_promotion" class="chk_one">
+            프로모션 수신에 동의합니다
+        </label>
+    </div>
+
+    <script>
+        // 전체 동의 체크박스
+        var chkAll = document.getElementById('chk_all');
+        
+        // 개별 동의 체크박스
+        var chkOneList = document.getElementsByClassName('chk_one');
+
+        // 전체동의 체크하면 개별동의가 모두 체크되도록
+        // 전체 동의 해제하면 개별동의도 모두 해제
+        chkAll.onclick = function(){
+            for(let i = 0; i < chkOneList.length; i++){
+                chkOneList[i].checked = chkAll.checked;
+            }
+        }
+
+        // 개별동의가 풀리면 전체동의도 풀림
+        for(let i = 0; i < chkOneList.length; i++){
+            chkOneList[i].onclick = function(){
+                for(let j= 0; j < chkOneList.length; j++){
+                    chkCount += chkOneList[j].checked;
+
+                }
+                chkAll.checked = (chkOneList.length == chkCount);
+            }
+        }
+
+    </script> 
+
+    <!-- 연습 -->
+    <div>
+        <form id="frm_regi" action="" method="get">
+            <input type="text" placeholder="이메일" id="ipt_email">
+            <button id="regi">가입</button>
+        </form>
+    </div>
+    <script>
+        var frm_regi = document.getElementById('frm_regi');
+        var iptEmail = document.getElementById('ipt_email');
+        var regi = document.getElementById('regi');
+
+        iptEmail.onsubmit = function(event){
+            if(this.indexOf('@') != -1 && this.indexOf('@') != 0 && this.charAt(this.length - 1) !== '@' && this.indexOf('.') != -1){
+                submit();
+            } else {
+                event.preventDefault();
+                return;
+            }
+        }
+    </script>
+</body>
+</html>

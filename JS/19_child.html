@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+ 
+    <div>
+        <div>받은 메세지</div>
+        <div id="receive_msg"></div>        
+    </div>
+    <div>
+        <label for="msg">보낼 메세지</label>
+        <input type="text" id="msg">
+        <input type="button" value="메세지 전송" id="btn_send">
+    </div>
+    <script>
+            // 문서객체
+            var msg = document.getElementById('msg');
+            var btnSend = document.getElementById('btn_send');
+            
+            // 클릭 이벤트
+            btnSend.addEventListener('click', ()=>{
+                // opener의 개념...?
+                // 현재 창을 열어주는 부모창 (opener)
+                opener.onload = ()=>{
+                    opener.document.getElementById('receive_msg').textContent = msg.value;
+
+                }
+            });
+    </script>
+    
+</body>
+</html>

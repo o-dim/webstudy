@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>    
+        var str = 'JavaScript';
+
+        // 문자열 길이 구하기
+        console.log(str.length);
+
+        // 특정 문자
+        console.log(str.charAt(0));
+        console.log(str.charAt(str.length-1));
+
+        // 특정 문자열
+        console.log(str.substring(0,4)); // 인덱스 0이상 인덱스 4미만
+        console.log(str.substring(4)); // 인덱스 4부터 끝까지
+        console.log(str.substr(0,4)); // 인덱스 0부터 4글자
+        console.log(str.substr(4)); // 인덱스 4부터 끝까지
+
+        // 특정 문자(열)의 인덱스
+        console.log(str.indexOf('a')); // a 인덱스 반환
+        console.log(str.indexOf('j')); // j는 없으니 -1을 반환한다
+        console.log(str.lastIndexOf('a')); // 뒤에서부터 찾기
+
+        // 특정(시작/종료) 패턴 검사
+        console.log(str.startsWith('J')); // J로 시작하면 true 반환
+        console.log(str.endsWith('Script')); // Script로 끝나면 true 반환
+
+        // 대소문자 변환
+        console.log(str.toUpperCase()); // 대문자로 변환
+        console.log(str.toLowerCase()); // 소문자로 변환
+
+        // 좌우 공백 제거
+        var str = '       Java     Script    '
+        console.log(str.trimEnd()); // 뒤 공백 제거
+        console.log(str.trimStart()); // 앞 공백 제거
+        console.log(str.trim()); // 앞뒤 모두 제거
+
+        // 하나만 치환 (찾아 바꾸기)
+        var str = 'JavaJavaJavaJavaJava';
+        console.log(str.replace('Java', '자바'));
+
+        // 분리한 문자열 데이터들을 배열에 넣기
+        var str = 'Java,Oracle,HTML,CSS,JavaScript';
+        var arr = str.split(',');
+        console.log(arr);
+
+        // 배열 요소를 문자열로
+        var str2 = arr.join(',');
+        console.log(str2);
+    </script>
+
+    <script>
+        var str = 'JavaJavaJavaJavaJava';
+
+        while(str.indexOf('Java') != -1){
+            str = str.replace('Java', '자바');
+        }
+        console.log(str);
+
+
+        // String 객체가 공유할 수 있도록 Prototype에 replaceAll 속성을 등록한다
+        // replaceAll 속성의 값으로 함수를 등록하면 replaceAll 속성은 메소드가 된다
+
+        String.prototype.replaceAll = function(data1, data2){
+            var str = this;
+            while(str.indexOf(data1) != -1){
+                str = str.replace(data1, data2);
+            }
+            return str;
+        }
+        var str = 'JavaJavaJavaJavaJava';
+        console.log(str.replaceAll('Java', '자바'));
+
+
+        // 팁. split 와 join 으로 replaceAll 처리하기
+        // 예시 ) 2023-03-07을 2023/03/07로 바꾸기
+        String.prototype.replaceAll2 = function(data1, data2){
+            return this.split(data1).join(data2);
+        }
+        var str = '2023-03-07';
+        console.log(str.replaceAll2('-', '/'));
+        
+    </script>
+</body>
+</html>
