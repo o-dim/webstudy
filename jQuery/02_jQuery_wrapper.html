@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../resources/js/lib/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <script>
+        // load 이벤트
+        $(function(){
+            // 문서 객체
+            var box = document.getElementById('box');
+            console.log(box);
+
+            // jQuery wrapper를 이용하여 문서객체를 jQuery 객체로 변환하기
+            var jBox = $(box);
+            console.log(jBox);
+        });
+    </script>
+    <div id="box">
+        HelloooooooooooWorrrrrrrrrrld
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../resources/js/lib/jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <div id="box1">BOX1</div>
+    <script>
+        // 1. text() == textContent
+        console.log($('#box1').text());
+        $('#box1').text('박스1');
+    </script>
+
+    <div id="box2">BOX2</div>
+    <script>
+        // 2. html() == innerHTML
+        console.log($('#box2').html());
+        $('#box2').html('<h1>BOX2</h1>');
+    </script>
+
+    <div id="box3">BOX3</div>
+    <script>
+        // 3. css() == style
+        $('#box3').css('color', '#7DE663')
+                  .css('font-size', '32pt');
+        $('#box3').css({
+            'background-color' : '#FC608C',
+            'text-align' : 'center'
+        })
+    </script>
+
+    <div><img id="img"></div>
+    <script>
+        // 4. attr() == attribute
+        $('#img').attr('alt', '이미지');
+        $('#img').attr('src', '../../images/fruit1.jpg');
+        $('#img').attr('width', '200px');
+    </script>
+
+    <div>
+        <a id="link">링크</a>
+    </div>
+    <script>
+        // 5.prop() == property
+        console.log($('#link').prop('id'));
+        $('#link').prop('href', 'https://www.naver.com');
+        $('#link').prop('target', '_blank');
+    </script>
+
+    <div>
+        <ul id="menu">
+            <li id="pasta">바닷마을파스타</li>
+        </ul>
+    </div>
+    <script>
+        
+        // 부모 자식 관계로 추가하기
+        var menu = $('#menu');
+        menu.prepend('<li id="cheese">치즈</li>');
+        menu.append('<li id="pizza">피자</li>');
+        menu.prepend($('<li>').attr('id', 'beef').text('소고기'));
+        menu.append($('<li>').attr('id', 'pork').text('돼지고기'));
+
+        $('<li id="americano">아메리카노</li>').prependTo(menu);
+        $('<li id="latte">라떼</li>').appendTo(menu);
+        $('<li>').attr('id', 'chicken').text('치킨').prependTo(menu);
+        $('<li>').attr('id', 'hamburger').text('햄버거').prependTo(menu);
+
+        // 형제 관계로 추가하기
+        $('#pasta').before('<li id="ramen">라면</li>');
+        $('#pasta').after($('<li>').attr('id', 'rice').text('공기밥'));
+
+
+    </script>
+
+    <div>
+        <ul id="movies">
+            <li id="terminator">터미네이터</li>
+            <li id="avater">아바타</li>
+            <li id="alien">에일리언</li>
+        </ul>
+    </div>
+    <script>
+        // 1. 특정 요소만 제거하기
+        $('#terminator').remove();
+        // 2. 모든 하위요소 제거하기
+        $('#movies').empty();
+    </script>
+</body>
+</html>
