@@ -90,5 +90,89 @@
         // 2. 모든 하위요소 제거하기
         $('#movies').empty();
     </script>
+
+    <div>
+        <form id="frm">
+            <div>
+                <input type="text" placeholder="아이디">
+            </div>
+            <div>
+                <input type="password" name="" id="">
+            </div>
+            <div>
+                <input type="radio" name="gender" value="male" id="male">
+                <label for="male">남자</label>
+                <input type="radio" name="gender" value="female" id="female">
+                <label for="female">여자</label>
+                <input type="radio" name="gender" value="none" id="none" checked>
+                <label for="none">선택안함</label>
+            </div>
+            <div>
+                <select>
+                    <option value="서울">서울</option>
+                    <option value="경기" selected>경기</option>
+                    <option value="인천">인천</option>
+                </select>
+            </div>
+            <div>
+                <textarea>HellWorld</textarea>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        $('#frm :text').css('backgroud-color', 'silver');
+        $('#frm :text').prop('value', 'admin');
+        $('#frm :text').val('chick-fil-a');
+
+        // input type=password
+        $('#frm :password').val('1234');
+
+        //input type = radio
+        $('#frm :radio').val() // 첫 번째 radio의 value 임
+        // 사용자가 체크한 것을 찾아야해...
+        console.log($('#frm :radio:checked').val()); //check 된 radio 의 value
+
+        // select
+        console.log($('#frm select').val()); // 선택된 option 의 value
+
+        // textarea
+        console.log($('#frm textarea').text());
+        $('#frm textarea').text('helljQuery');
+    </script>
+
+    <style>
+        .big-text {
+            font-size : 2em;
+        }
+        .red-text {
+            color: crimson;
+        }
+    </style>
+    <div id="box4" class="invisible">
+        HellWorld
+    </div>
+    <script>
+        // class 속성 추가하기
+        $('#box4').addClass('big-text').addClass('red-text'); // 메소드 체이닝
+        $('#box4').addClass('big-text red-text'); // 공백으로 class 구분
+
+        // class 속성 제거하기
+        $('#box4').removeClass('red-text').removeClass('big-text');
+        $('#box4').removeClass('big-text red-text');
+
+        // class 속성 토글(추가와 제거가 번갈아하면서 적용)
+        $('#box4').toggleClass('big-text').toggleClass('big-text');
+        $('#box4').toggleClass('red-text').toggleClass('red-text');
+
+        // class 속성 확인
+        if($('#box4').hasClass('invisible')){
+            $('#box4').css('opacity', '0.3');
+        }
+
+
+    </script>
+
+
 </body>
 </html>
